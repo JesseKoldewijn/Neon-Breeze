@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "build:local": "LOCAL_PREVIEW=true astro build",
     "build": "astro check && astro build",
+    "preview:local": "LOCAL_PREVIEW=true astro preview",
     "preview": "astro preview",
     "tw:config-viewer": "tailwind-config-viewer -c ./tailwind.config.cjs -p 1234",
     "astro": "astro"
@@ -13,10 +15,16 @@
   "dependencies": {
     "@astrojs/alpinejs": "^0.3.1",
     "@astrojs/check": "^0.3.4",
+    "@astrojs/node": "^7.0.2",
+    "@astrojs/solid-js": "^3.0.2",
     "@astrojs/vercel": "^6.1.0",
     "@types/alpinejs": "^3.13.5",
     "alpinejs": "^3.13.3",
     "astro": "^4.0.7",
+    "astro-compress": "^2.2.5",
+    "astro-font": "^0.0.28",
+    "sharp": "^0.33.1",
+    "solid-js": "^1.8.7",
     "typescript": "^5.3.3"
   },
   "devDependencies": {

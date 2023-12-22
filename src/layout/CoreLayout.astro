@@ -2,7 +2,13 @@
 import "@/styles/tailwind.css"
 import { ViewTransitions } from "astro:transitions"
 
+import CoreNavbar from "./elements/CoreNavbar.astro"
+import Fonts from "./meta/Favicons.astro"
+import Favicons from "./meta/Favicons.astro"
+
 import { appConfig } from "@/config/app"
+import AlpineInit from "@/providers/AlpineInit.astro"
+
 const { brand } = appConfig
 
 export type Props = {
@@ -20,9 +26,14 @@ const { title, desc } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
+    <Fonts />
+    <Favicons />
     <ViewTransitions />
   </head>
   <body>
-    <slot />
+    <AlpineInit>
+      <CoreNavbar />
+      <slot />
+    </AlpineInit>
   </body>
 </html>

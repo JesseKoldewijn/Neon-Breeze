@@ -1,0 +1,24 @@
+---
+import { AstroFont } from "astro-font"
+---
+
+<head>
+  <AstroFont
+    config={[
+      {
+        name: "Afacad",
+        src: [
+          {
+            style: "bold",
+            weight: "700",
+            path: "https://fonts.gstatic.com/s/afacad/v1/6NUK8FKMIQOGaw6wjYT7ZHG_zsBBfvLqagk-80KjZfJ_uw.woff2",
+          },
+        ],
+        preload: true,
+        display: "swap",
+        selector: "body",
+        fallback: "sans-serif",
+      },
+    ]}
+  />
+</head>

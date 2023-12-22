@@ -1,17 +1,17 @@
 ---
+import Alpine from "alpinejs"
+
 type AlpineDirective = { [name: string]: any }
 
 type Props = {
-  extendAlpineDirective: () => AlpineDirective[] | AlpineDirective[]
+  extendAlpineDirective?: () => AlpineDirective[] | AlpineDirective[]
 }
 
 const { extendAlpineDirective } = Astro.props
 ---
 
 <div>
-  <script defer>
-    import Alpine from "alpinejs"
-
+  <script defer type="module">
     const loadExtendedDirectives = () => {
       switch (typeof extendAlpineDirective) {
         case "function":
@@ -32,7 +32,6 @@ const { extendAlpineDirective } = Astro.props
     loadExtendedDirectives()
 
     window.Alpine = Alpine
-    Alpine.start()
   </script>
   <slot />
 </div>

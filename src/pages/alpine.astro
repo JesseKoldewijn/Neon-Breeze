@@ -1,0 +1,15 @@
+---
+import CoreLayout from "@/layout/CoreLayout.astro"
+
+import { appConfig } from "@/config/app"
+const { brand } = appConfig
+---
+
+<CoreLayout title="Alpine.js">
+  <div class="fixed inset-0 flex h-full w-full flex-col items-center justify-center gap-3 px-4">
+    <h1 class="text-xl font-semibold">
+      {brand.name} - Alpine.js
+    </h1>
+    <p class="max-w-md text-center font-medium text-accent-500">{brand.desc.default}</p>
+  </div>
+</CoreLayout>

@@ -1,0 +1,35 @@
+---
+import CoreNavLink from "./CoreNavLink"
+
+const links = [
+  { href: "/", text: "Home" },
+  { href: "/alpine", text: "Alpine.js" },
+  { href: "/solid", text: "Solid.js" },
+]
+
+import Logo from "../../../public/favicon-32x32.png"
+---
+
+<nav
+  data-id="core-navigation"
+  class="w-fill fixed inset-x-0 z-[100] mx-3 mt-4 flex h-auto place-content-between items-center"
+>
+  <div data-id="nav-branding">
+    <a
+      href="/"
+      class="flex items-center gap-2 rounded-md border border-background-dark-500 px-2 py-2 font-semibold transition-all duration-500 hover:border-foreground-300"
+    >
+      <img src={Logo.src} alt="Logo" width={32} height={32} class="aspect-square object-cover" />
+       Neon Breeze
+    </a>
+  </div>
+  <div data-id="nav-links" class="flex gap-2">
+    {
+      links.flatMap((link) => (
+        <CoreNavLink href={link.href} client:visible>
+          {link.text}
+        </CoreNavLink>
+      ))
+    }
+  </div>
+</nav>
