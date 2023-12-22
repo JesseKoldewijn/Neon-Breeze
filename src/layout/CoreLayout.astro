@@ -1,0 +1,26 @@
+---
+import "@/styles/tailwind.css"
+import { ViewTransitions } from "astro:transitions"
+
+import { appConfig } from "@/config/app"
+const { brand } = appConfig
+
+export type Props = {
+  title?: string
+  desc?: string
+}
+
+const { title, desc } = Astro.props
+---
+
+<html>
+  <head>
+    <title>{title !== undefined ? `${title} | ${brand.name}` : brand.name}</title>
+    <meta name="description" content={desc ?? brand.desc.default} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <ViewTransitions />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

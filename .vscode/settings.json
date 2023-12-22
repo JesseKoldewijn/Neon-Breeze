@@ -1,0 +1,15 @@
+{
+  "json.schemaDownload.enable": true,
+  "prettier.documentSelectors": [
+    "**/*.astro",
+    "**/*.tsx",
+    "**/*.ts",
+    "**/*.cjs",
+    "**/*.js",
+    "**/*.json"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

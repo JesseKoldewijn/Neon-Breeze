@@ -1,0 +1,38 @@
+---
+type AlpineDirective = { [name: string]: any }
+
+type Props = {
+  extendAlpineDirective: () => AlpineDirective[] | AlpineDirective[]
+}
+
+const { extendAlpineDirective } = Astro.props
+---
+
+<div>
+  <script defer>
+    import Alpine from "alpinejs"
+
+    const loadExtendedDirectives = () => {
+      switch (typeof extendAlpineDirective) {
+        case "function":
+          const directives = extendAlpineDirective()
+          directives.forEach((directive) => {
+            Alpine.directive(directive.name, directive.callback)
+          })
+          break
+        case "object":
+          extendAlpineDirective.forEach((directive) => {
+            Alpine.directive(directive.name, directive.callback)
+          })
+          break
+        default:
+          break
+      }
+    }
+    loadExtendedDirectives()
+
+    window.Alpine = Alpine
+    Alpine.start()
+  </script>
+  <slot />
+</div>

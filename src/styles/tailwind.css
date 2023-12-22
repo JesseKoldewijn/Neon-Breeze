@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply scroll-smooth bg-background-700 text-content-dark-600;
+}
