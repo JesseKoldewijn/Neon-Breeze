@@ -13,7 +13,7 @@ export type Props = {
 const { title, desc } = Astro.props
 ---
 
-<html>
+<html lang="en">
   <head>
     <title>{title !== undefined ? `${title} | ${brand.name}` : brand.name}</title>
     <meta name="description" content={desc ?? brand.desc.default} />

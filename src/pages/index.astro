@@ -1,16 +1,15 @@
 ---
+import CoreLayout from "@/layout/CoreLayout.astro"
 
+import { appConfig } from "@/config/app"
+const { brand } = appConfig
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<CoreLayout>
+  <div class="fixed inset-0 flex h-full w-full flex-col items-center justify-center gap-3">
+    <h1 class="text-xl font-semibold">
+      {brand.name}
+    </h1>
+    <p class="max-w-md text-center font-medium text-accent-500">{brand.desc.default}</p>
+  </div>
+</CoreLayout>
